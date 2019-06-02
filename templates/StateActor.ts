@@ -9,9 +9,9 @@ export function is__class__(value: Sein.SObject): value is __class__ {
 }
 
 @Sein.SClass({className: '__class__'})
-export default class __class__ extends Sein.InfoActor<I__class__Options> {
+export default class __class__ extends Sein.StateActor<I__class__Options> {
   public is__class__ = true;
-  public updatePriority = Sein.InfoActor.UPDATE_PRIORITY.Others;
+  public updatePriority = Sein.InfoActor.UPDATE_PRIORITY.State;
 
   public onInit(initOptions: I__class__Options) {
 

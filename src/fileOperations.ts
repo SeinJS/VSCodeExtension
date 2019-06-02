@@ -9,8 +9,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import environment from './environment';
-
-export type TTemplate = {label: string, type: string};
+import templates, {TTemplate} from './templates';
 
 const validateNameRegex = ((): RegExp => {
   if (process.platform === 'win32') {
@@ -23,9 +22,7 @@ const validateNameRegex = ((): RegExp => {
 })();
 
 export async function getTemplates(): Promise<TTemplate[]> {
-  return [
-    {label: 'InfoActor', type: 'Actor'}
-  ];
+  return templates;
 }
 
 export async function pickTemplate(templates: TTemplate[]): Promise<TTemplate> {
@@ -54,22 +51,23 @@ export async function getFileName(): Promise<string> {
 }
 
 export function createFile(template: TTemplate, distDir: string, name: string) {
-  environment.update(name + template.type);
+  environment.update(name);
 
-  if (fs.statSync(distDir).isFile) {
+  if (fs.statSync(distDir).isFile()) {
     distDir = path.dirname(distDir);
   }
 
-  console.log(environment.readTemplate(template.label));
+  const fileName = environment.fields.name + template.type;
   const content = environment.readTemplate(template.label)
-    .replace(/__file__/g, environment.fields.name)
-    .replace(/__class__/g, environment.fields.name)
+    .replace(/__name__/g, environment.fields.name)
+    .replace(/__file__/g, fileName)
+    .replace(/__class__/g, fileName)
     .replace(/__author__/g, environment.fields.author)
     .replace(/__email__/g, environment.fields.email)
     .replace(/__date__/g, environment.fields.date)
     .replace(/__custom__/g, environment.fields.custom);
 
-  const distPath = path.join(distDir, `${environment.fields.name}.ts`);
+  const distPath = path.join(distDir, `${fileName}.ts`);
   fs.writeFileSync(distPath, content);
 
   let uri = vscode.Uri.file(distPath);
