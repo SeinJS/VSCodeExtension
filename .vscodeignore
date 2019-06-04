@@ -6,3 +6,4 @@ src/**
 **/tsconfig.json
 **/tslint.json
 **/*.map
+package-lock.json
