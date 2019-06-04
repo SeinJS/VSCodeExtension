@@ -2,7 +2,7 @@
   "name": "seinjs",
   "displayName": "Sein.js",
   "description": "VSCode extension for Sein.js",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "engines": {
     "vscode": "^1.34.0"
   },
