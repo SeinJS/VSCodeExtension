@@ -13,6 +13,11 @@
     "*",
     "onCommand:seinjs.createClass"
   ],
+  "author": {
+    "name": "dtysky",
+    "email": "dtysky@outlook.com"
+  },
+  "publisher": "dtysky",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
