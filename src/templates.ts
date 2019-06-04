@@ -13,8 +13,11 @@ const templates: TTemplate[] = [
   {type: 'Component', label: 'Component'},
   {type: 'Component', label: 'SceneComponent'},
 
-  {type: 'Actor', label: 'InfoActor'},
   {type: 'Actor', label: 'SceneActor'},
+  {type: 'Actor', label: 'StaticMeshActor'},
+  {type: 'Actor', label: 'SkeletalMeshActor'},
+
+  {type: 'Actor', label: 'InfoActor'},
   {type: 'Actor', label: 'StateActor'},
   {type: 'Actor', label: 'SystemActor'},
   {type: 'Actor', label: 'RenderSystemActor'},

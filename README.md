@@ -4,29 +4,22 @@ VSCode extension for Sein.js
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Create Sein.js Class files from Base Classes:
 
-For example if there is an image subfolder under your extension project workspace:
+You can use this extension to create your Sein.js class from Base Classes.
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![usage](vsc.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```bash
+npm i seinjs --save
+```
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `seinjs.fields.author`: Custom field in generated file: __author__
+* `seinjs.fields.email`: Custom field in generated file: __email__
+* `seinjs.fields.custom`: Custom field in generated file: __custom__

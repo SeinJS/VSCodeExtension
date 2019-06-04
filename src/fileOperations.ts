@@ -50,8 +50,8 @@ export async function getFileName(): Promise<string> {
   return fileName;
 }
 
-export function createFile(template: TTemplate, distDir: string, name: string) {
-  environment.update(name);
+export async function createFile(template: TTemplate, distDir: string, name: string) {
+  await environment.update(name);
 
   if (fs.statSync(distDir).isFile()) {
     distDir = path.dirname(distDir);

@@ -1,5 +1,5 @@
 {
-  "name": "seinjs-vscode-extension",
+  "name": "seinjs",
   "displayName": "Sein.js",
   "description": "VSCode extension for Sein.js",
   "version": "0.6.0",
@@ -7,7 +7,7 @@
     "vscode": "^1.34.0"
   },
   "categories": [
-    "Other"
+    "Sein.js"
   ],
   "activationEvents": [
     "*",
@@ -37,15 +37,15 @@
     "properties": {
       "seinjs.fields.author": {
         "type": "string",
-        "description": "Custom fields: author"
+        "description": "Custom field in generated file: __author__"
       },
       "seinjs.fields.email": {
         "type": "string",
-        "description": "Custom fields: email"
+        "description": "Custom field in generated file: __email__"
       },
       "seinjs.fields.custom": {
         "type": "string",
-        "description": "Custom fields: custom",
+        "description": "Custom field in generated file: __custom__",
         "default": ""
       }
     }
@@ -60,10 +60,13 @@
   "devDependencies": {
     "@types/mocha": "^2.2.42",
     "@types/node": "^10.12.21",
-    "seinjs": "^1.1.12",
-    "seinjs-cli": "^0.8.22",
+    "seinjs": "^1.1.14",
     "tslint": "^5.12.1",
     "typescript": "^3.3.1",
     "vscode": "^1.1.28"
+  },
+  "dependencies": {
+    "seinjs": "^1.1.14",
+    "seinjs-cli": "^0.8.22"
   }
 }

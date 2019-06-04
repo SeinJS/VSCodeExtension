@@ -1,5 +1,5 @@
 # Change Log
 
-## [Unreleased]
+## v0.8
 
 - Initial release
